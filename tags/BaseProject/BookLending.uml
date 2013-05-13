@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.librarymanagement.domain.BookLending</OriginalElement>
+  <nodes>
+    <node x="15.75" y="78.0">org.nthdimenzion.ddd.domain.BaseArchetype</node>
+    <node x="437.70833333333326" y="324.0">javax.persistence.Entity</node>
+    <node x="90.70833333333331" y="314.0">org.nthdimenzion.ddd.domain.BaseAggregateRoot</node>
+    <node x="122.0" y="0.0">javax.persistence.MappedSuperclass</node>
+    <node x="0.0" y="0.0">org.nthdimenzion.ddd.domain.IPersistable</node>
+    <node x="296.7083333333333" y="324.0">org.nthdimenzion.ddd.domain.annotations.AggregateRoot</node>
+    <node x="50.958333333333314" y="216.0">org.nthdimenzion.ddd.domain.IdGeneratingArcheType</node>
+    <node x="171.45833333333331" y="412.0">com.librarymanagement.domain.BookLending</node>
+    <node x="21.708333333333314" y="324.0">org.nthdimenzion.ddd.domain.annotations.MI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.nthdimenzion.ddd.domain.BaseArchetype" target="org.nthdimenzion.ddd.domain.IPersistable">
+      <point x="-35.25" y="-44.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.nthdimenzion.ddd.domain.IdGeneratingArcheType" target="javax.persistence.MappedSuperclass">
+      <point x="42.5" y="-24.0" />
+      <point x="178.45833333333331" y="191.0" />
+      <point x="188.83333333333331" y="191.0" />
+      <point x="188.83333333333331" y="53.0" />
+      <point x="192.0" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.librarymanagement.domain.BookLending" target="org.nthdimenzion.ddd.domain.annotations.MI">
+      <point x="-74.25" y="-54.0" />
+      <point x="196.20833333333331" y="392.0" />
+      <point x="46.208333333333314" y="392.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.nthdimenzion.ddd.domain.BaseAggregateRoot" target="javax.persistence.MappedSuperclass">
+      <point x="46.5" y="-24.0" />
+      <point x="230.20833333333331" y="289.0" />
+      <point x="231.45833333333331" y="289.0" />
+      <point x="231.45833333333331" y="53.0" />
+      <point x="238.66666666666663" y="53.0" />
+      <point x="46.66666666666666" y="14.0" />
+    </edge>
+    <edge source="org.nthdimenzion.ddd.domain.BaseArchetype" target="javax.persistence.MappedSuperclass">
+      <point x="35.25" y="-44.0" />
+      <point x="121.5" y="53.0" />
+      <point x="145.33333333333331" y="53.0" />
+      <point x="-46.666666666666686" y="14.0" />
+    </edge>
+    <edge source="com.librarymanagement.domain.BookLending" target="org.nthdimenzion.ddd.domain.annotations.AggregateRoot">
+      <point x="24.75" y="-54.0" />
+      <point x="295.2083333333333" y="382.0" />
+      <point x="357.2083333333333" y="382.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.librarymanagement.domain.BookLending" target="javax.persistence.Entity">
+      <point x="74.25" y="-54.0" />
+      <point x="344.7083333333333" y="392.0" />
+      <point x="471.20833333333326" y="392.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="com.librarymanagement.domain.BookLending" target="org.nthdimenzion.ddd.domain.BaseAggregateRoot">
+      <point x="-24.75" y="-54.0" />
+      <point x="245.70833333333331" y="382.0" />
+      <point x="183.70833333333331" y="382.0" />
+      <point x="0.0" y="24.0" />
+    </edge>
+    <edge source="org.nthdimenzion.ddd.domain.IdGeneratingArcheType" target="org.nthdimenzion.ddd.domain.BaseArchetype">
+      <point x="-42.5" y="-24.0" />
+      <point x="93.45833333333331" y="191.0" />
+      <point x="86.25" y="191.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="org.nthdimenzion.ddd.domain.BaseAggregateRoot" target="org.nthdimenzion.ddd.domain.IdGeneratingArcheType">
+      <point x="-46.5" y="-24.0" />
+      <point x="137.20833333333331" y="289.0" />
+      <point x="135.95833333333331" y="289.0" />
+      <point x="0.0" y="24.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7" x="242.8571428571429" y="224.5714285714286" />
+  <SelectedNodes>
+    <node>com.librarymanagement.domain.BookLending</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
