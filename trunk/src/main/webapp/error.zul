@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+        <zscript>
+            import org.slf4j.Logger;
+            import org.slf4j.LoggerFactory;
+            protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+            Throwable excp = requestScope.get("javax.servlet.error.exception");
+
+            logger.error("Error at UI",excp);
+
+        </zscript>
+        <div style="margin:20px;">
+            <label value="Sorry, There has been a unexpected error in our servers, Please contact the administrator"
+                   style="color:red;"/>
+        </div>
+        <div style="margin:20px;">
+            <a label="Click here to login" onClick='Executions.sendRedirect("/login.zul")'/>
+
+        </div>
+</zk>

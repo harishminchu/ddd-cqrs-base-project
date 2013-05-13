@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:cloud="http://schema.cloudfoundry.org/spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.8.xsd">
+
+
+    <bean class="org.nthdimenzion.ddd.infrastructure.hibernate.AutoColumnsPopulator" id="autoColumnsPopulator"/>
+
+    <bean id="dataSourceRef" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" id="sessionFactory">
+        <property name="dataSource" ref="dataSourceRef"></property>
+        <property name="entityInterceptor" ref="autoColumnsPopulator"/>
+        <property name="namingStrategy" ref="namingStrategy"></property>
+        <property name="packagesToScan">
+            <list>
+                <value>org.nthdimenzion.ddd.domain</value>
+                <value>org.nthdimenzion.security.domain</value>
+                <value>com.simplepersoncrud.domain</value>
+                <value>com.librarymanagement.domain</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <map>
+                <entry key="hibernate.dialect" value="${hibernate.dialect}"></entry>
+                <entry key="hibernate.show_sql" value="${hibernate.show_sql}"></entry>
+                <entry key="hibernate.connection.autocommit" value="${hibernate.connection.autocommit}"></entry>
+                <entry key="bytecode.provider" value="cglib"></entry>
+                <entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"></entry>
+                <entry key="hibernate.hbm2ddl.import_files" value="common.sql,librarymanagement.sql"></entry>
+                <entry key="javax.persistence.validation.factory" value-ref="validator"></entry>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="namingStrategy" class="org.nthdimenzion.ddd.infrastructure.hibernate.CustomNamingStrategy"/>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <tx:annotation-driven proxy-target-class="true"/>
+
+</beans>
